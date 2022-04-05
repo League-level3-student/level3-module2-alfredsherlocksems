@@ -31,8 +31,8 @@ class _02_SwappingDigits {
     public static int findMiddle(int[] arr) {
         sortIntArray(arr);
         if (arr.length % 2 == 0) {
-        	int mean = 
-        	return 0;
+        	int mean = (arr[arr.length/2] + arr[arr.length/2 + 1]) / 2;
+        	return mean;
         }
         else {
         	double bob = arr.length/2 + .5;

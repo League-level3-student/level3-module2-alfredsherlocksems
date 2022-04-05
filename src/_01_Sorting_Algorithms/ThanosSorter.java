@@ -1,10 +1,16 @@
 package _01_Sorting_Algorithms;
 
+import java.util.Random;
+
 public class ThanosSorter extends Sorter {
     public ThanosSorter() {
         type = "Thanos";
     }
-    
+    boolean sorted = false;
+    Random ran = new Random();
+    int removeHalf = 0;
+    int max = 0;
+    int length;
     /*
      * Thanos Sort is the sorting algorithm used by mighty titan Thanos.
      * When Thanos observes that the array is unsorted, he simply snaps his
@@ -45,6 +51,44 @@ public class ThanosSorter extends Sorter {
      */
     @Override
     void sort(int[] arr, SortingVisualizer display) {
-        
+    	length = arr.length;
+    	while(!sorted) {
+    		bubble(arr);
+    		if (!sorted) {
+    			if (ran.nextInt(2) == 0) {
+    				removeHalf = length/2;
+    				max = length;
+    			}
+    			else {
+    				removeHalf=0;
+    				max = length/2;
+    			}
+    			for(int i = removeHalf; i < max; i++) {
+    				arr[i] = 0;
+    			}
+    			length = length/2;
+    		}
+    		display.updateDisplay();
+    	}
+    }
+    void bubble(int[] arr) {
+    	int[] compare = new int[length];
+    	for (int i = 0; i < length; i++) {
+        	for (int k = 0; k < length - 1; k++) {
+        		if (arr[k] > arr[k+1]) {
+        			int temp = arr[k];
+        			compare[k] = arr[k + 1];
+        			compare[k + 1] = temp;
+        		}
+        	}
+        }
+    	for(int i = 0; i < length; i++) {
+    		if(!(compare[i] == arr[i])) {
+    			break;
+    		}
+    		if (i == length - 1) {
+    			sorted = true;
+    		}
+    	}
     }
 }
