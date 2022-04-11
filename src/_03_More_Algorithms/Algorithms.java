@@ -8,10 +8,18 @@ import java.util.List;
 public class Algorithms {
     
     public static String multiply(int num1, int num2) {
-        return null;
+        String bob = num1 + " x " + num2 + " = " + num1 * num2;
+    	return bob;
     }
     
     public static int findBrokenEgg(List<String> eggs) {
-        return 0;
+        int bob = -1;
+    	for (int i = 0; i < eggs.size(); i++) {
+        	if (eggs.get(i).equals("cracked")) {
+        		bob = i;
+        		return bob;
+        	}
+        }
+    	return bob;
     }
 }

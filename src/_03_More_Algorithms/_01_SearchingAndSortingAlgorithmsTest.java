@@ -16,12 +16,12 @@ public class _01_SearchingAndSortingAlgorithmsTest {
      */
 
     // 1. Create a method that will find and return the first index of a broken egg
-//    @Test
-//    public void testSearch() {
-//        List<String> eggs = Arrays.asList(new String[] { "whole", "whole", "whole", "whole",
-//                "cracked", "whole", "whole", "whole", "cracked", "whole", "whole", "whole" });
-//        assertEquals(4, Algorithms.findBrokenEgg(eggs));
-//    }
+    @Test
+    public void testSearch() {
+        List<String> eggs = Arrays.asList(new String[] { "whole", "whole", "whole", "whole",
+                "cracked", "whole", "whole", "whole", "cracked", "whole", "whole", "whole" });
+        assertEquals(4, Algorithms.findBrokenEgg(eggs));
+    }
 
     // 2. Count how many oysters contain pearls
 //    @Test
